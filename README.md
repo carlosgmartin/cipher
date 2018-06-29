@@ -1,5 +1,5 @@
 # Cipher
-A command line tool for cryptography, written in Haskell
+A command line tool for cryptography, written in Haskell.
 
 Compile the program:
 ```
