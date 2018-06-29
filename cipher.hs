@@ -21,15 +21,15 @@ decrypt_autokey (k:ks) (c:cs) =
 
 main = do
     args <- System.Environment.getArgs
-    content <- getContents
+    contents <- getContents
     putStr $ if length args == 3 && 
-        elem (init args) (sequence [["enc", "dec"], ["vige", "auto"]])
+        elem (init args) (sequence [["-e", "-d"], ["-v", "-a"]])
         then if null (last args)
             then "key cannot be empty\n"
             else (case init args of
-                ["enc", "vige"] -> encrypt_vigenere
-                ["dec", "vige"] -> decrypt_vigenere
-                ["enc", "auto"] -> encrypt_autokey
-                ["dec", "auto"] -> decrypt_autokey
-            ) (last args) content
-        else "usage: {enc | dec} {vige | auto} key\n"
+                ["-e", "-v"] -> encrypt_vigenere
+                ["-d", "-v"] -> decrypt_vigenere
+                ["-e", "-a"] -> encrypt_autokey
+                ["-d", "-a"] -> decrypt_autokey
+            ) (last args) contents
+        else "usage: cipher {-e | -d} {-v | -a} key\n"
