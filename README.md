@@ -30,3 +30,10 @@ Test the [autokey cipher](https://en.wikipedia.org/wiki/Autokey_cipher)
 $ echo 'Plaintext message.' | ./cipher enc auto $key | ./cipher dec auto $key
 Plaintext message.
 ```
+
+Encrypt a file:
+```
+$ cat LICENSE.md | ./cipher enc auto $key > encrypted
+$ open encrypted
+$ cat encrypted | ./cipher dec auto $key
+```
