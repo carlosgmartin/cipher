@@ -6,9 +6,17 @@ Compile the program:
 $ ghc cipher.hs -v0 -no-keep-hi-files -no-keep-o-files
 ```
 
+See usage message:
+```
+$ ./cipher
+usage: {vige | auto} {enc | dec} key
+```
+
 Generate a key:
 ```
 $ key=$(openssl rand -base64 6)
+$ echo $key
+aPFB5ue2
 ```
 
 Test the [Vigenère cipher](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher):
