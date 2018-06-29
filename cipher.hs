@@ -32,4 +32,4 @@ main = do
                 ["enc", "auto"] -> encrypt_autokey
                 ["dec", "auto"] -> decrypt_autokey
             ) (last args) content
-        else "usage: {vige | auto} {enc | dec} key\n"
+        else "usage: {enc | dec} {vige | auto} key\n"
