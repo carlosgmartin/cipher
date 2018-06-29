@@ -35,5 +35,8 @@ Encrypt a file:
 ```
 $ cat LICENSE.md | ./cipher enc auto $key > encrypted
 $ open encrypted
-$ cat encrypted | ./cipher dec auto $key
+$ cat encrypted | ./cipher dec auto $key > decrypted
+$ diff -s LICENSE.md decrypted
+Files LICENSE.md and decrypted are identical
+$ rm encrypted decrypted
 ```
